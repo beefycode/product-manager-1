@@ -2,26 +2,30 @@
 import "./App.css";
 import axios from 'axios'
 import {useState,useEffect} from 'react'
-import CreateProduct from "./components/CreateProduct";
+import Main from "./views/Main";
+import NavBar from "./components/NavBar";
+import OneProduct from "./components/OneProduct";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
+
 
 
 function App() {
-
-    useEffect(()=>{
-        axios.get('http://localhost:8000/api/allProducts')
-            .then((allProducts)=>{
-                console.log(allProducts.data);
-            })
-            .catch((err)=>{
-                console.log(err);
-            })
-    })
-
     return (
-        <div className="App">
+        <BrowserRouter>
+            <div className="App">
+                <NavBar/>
+                <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/product/:id" element={<OneProduct/>}/>
             
-            <CreateProduct path="/" />
-        </div>
+                </Routes>
+            </div>
+        </BrowserRouter>
+
+        
+
+
     );
 }
 
