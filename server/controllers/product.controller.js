@@ -9,7 +9,7 @@ module.exports = {
             res.json(allProducts)
         })
         .catch((err)=>{
-            res.status(500).json({message:'Something went wrong',error:err})
+            res.status(500).json(err)
         })
     },
     getOneProduct: (req,res) => {
@@ -18,7 +18,7 @@ module.exports = {
             res.json(oneProduct)
         })
         .catch((err)=>{
-            res.status(500).json({message:'Something went wrong', error:err})
+            res.status(500).json(err)
         })
     },
     createProduct: (req,res) => {
@@ -27,7 +27,7 @@ module.exports = {
             res.json(newProduct)
         })
         .catch((err)=>{
-            res.status(500).json({message:'Something went wrong', error:err})
+            res.status(500).json(err)
         })
     },
     updateProduct: (req,res) => {
@@ -36,7 +36,7 @@ module.exports = {
             res.json(updatedAlbum)
         })
         .catch((err)=>{
-            res.status(500).json({message:'Something went wrong',error:err})
+            res.status(500).json(err)
         })
     },
     deleteProduct: (req,res) => {
@@ -45,7 +45,7 @@ module.exports = {
                 res.json(response)
             })
             .catch((err) => {
-                res.status(500).json({message:'Something went wrong', error:err})
+                res.status(500).json(err)
             })
     }
 };
