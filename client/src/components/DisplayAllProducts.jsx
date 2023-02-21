@@ -42,6 +42,7 @@ const DisplayAllProducts = (props)=>{
     // }
 
     return(
+
         <div >
             <header>All Products!!</header>
             {
@@ -51,7 +52,7 @@ const DisplayAllProducts = (props)=>{
                         <br/>
                         <button onClick={()=>navigate(`/product/edit/${product._id}`)}>Edit</button>
                         <br/>
-                        <button onClick={()=> {deleteProduct(product._id)}}>Delete</button>
+                        <button onClick={()=> {deleteProduct(product._id)}}>ADOPT</button>
 
                     </div>
                 )
